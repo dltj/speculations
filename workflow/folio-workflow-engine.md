@@ -7,7 +7,7 @@
 * [Review of existing workflow systems](#review-of-existing-workflow-systems)
 * [Workflow data](#workflow-data)
 * [Front-end/back-end interaction](#front-endback-end-interaction)
-* [What workflow includes](#what-workflow-includes)
+* [Workflow vs. automation](#workflow-vs-automation)
 * [Example workflows](#example-workflows)
     * [Acquisition of a suggested book](#acquisition-of-a-suggested-book)
     * [Unboxing a delivery](#unboxing-a-delivery)
@@ -17,6 +17,15 @@
     * [Makefile-like dependency tree](#makefile-like-dependency-tree)
     * [Connector Framework](#connector-framework)
     * [Very high-level DSL (like Okapi CLI)](#very-high-level-dsl-like-okapi-cli)
+* [Implementation strategy](#implementation-strategy)
+    * [Virtual Machine for running workflows](#virtual-machine-for-running-workflows)
+    * [A way to express workflows](#a-way-to-express-workflows)
+        * [XML or JSON](#xml-or-json)
+        * [Human-readable/writeable DSL](#human-readablewriteable-dsl)
+        * [VM](#vm)
+        * [Visual](#visual)
+        * [Discussion](#discussion)
+    * [A way to track jobs](#a-way-to-track-jobs)
 * [Error handling](#error-handling)
 * [Appendix: using the notification system](#appendix-using-the-notification-system)
 * [Appendix: object types](#appendix-object-types)
@@ -79,7 +88,7 @@ XXX Much will be done on back-end, though effects will be seen on front-end: e.g
 
 
 
-## What workflow includes
+## Workflow vs. automation
 
 XXX Both pure automation (computer does every step) and human workflow. Workflows consisting entirely of the former can be thought of as macros.
 
@@ -128,6 +137,46 @@ XXX
 
 XXX Domain-specific loop control, e.g. `boxOfBooks.foreach(book) { ... }`.
 
+
+
+## Implementation strategy
+
+### Virtual Machine for running workflows
+
+XXX Somewhat like the CF Engine
+
+### A way to express workflows
+
+XXX Bizarrely, there may be up to four of these.
+
+#### XML or JSON
+
+XXX Probably the persistent form that is stored in the FOLIO DB, exported and imported, etc.
+
+#### Human-readable/writeable DSL
+
+XXX May be needed before we have Visual editor, unless we want to hand-write XML or JSON
+
+XXX Since this will be parseable, maybe we'll make it the persistent form and not bother with XML/JSON at all.
+
+#### VM
+
+XXX XML/JSON or DSL will be compiled to some representation that can be executed by the Workflow VM. We may store the compiled version (analogous to Java `.class` files), or maybe just compile and run from the internal representation as Perl and Python do.
+
+#### Visual
+
+XXX In v2, Filip's UK will guide us into a visual representation of workflows. The Workflow editor UI module will need to parse stores workflows (from XML/JSON or a DSL) to determine what to draw; and render edited drawings into a form to send back to the server.
+
+#### Discussion
+
+XXX Probably don't need all four representations. Which to omit?
+
+XXX Programming language: since we will need to parse/render on the client side for the V2 workflow editor, we will need implementations in JS. That suggests we should use those JS implementations on the server side too. This may mean the first Okapi module written in JS, or may entail somehow calling out from an RMB-based module into the JS compiler/renderer.
+
+
+### A way to track jobs
+
+XXX A back-end module for CRUDding the status of jobs based on workflows. Will likely consist of a tree of pointers to job-step objects, each with its own state. Will not need to be transmitted, so no need for a serialised or human-readable form.
 
 
 ## Error handling
