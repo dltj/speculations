@@ -1,2 +1,2 @@
 # speculations
-Speculative documentes
+Speculative documents
