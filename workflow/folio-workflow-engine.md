@@ -5,7 +5,7 @@
 * [Background](#background)
 * [Terminology](#terminology)
 * [Review of existing workflow systems](#review-of-existing-workflow-systems)
-* [Workflow data](#workflow-data)
+* [Using data in workflows](#using-data-in-workflows)
 * [Front-end/back-end interaction](#front-endback-end-interaction)
 * [Workflow vs. automation](#workflow-vs-automation)
 * [Example workflows](#example-workflows)
@@ -66,7 +66,7 @@ XXX Nassib volunteered to do this: no issue filed yet AFAIK.
 
 
 
-## Workflow data
+## Using data in workflows
 
 XXX Nassib's experience of workflow engines: pain comes in standardising inputs and outputs
 
