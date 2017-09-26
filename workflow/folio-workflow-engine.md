@@ -5,13 +5,13 @@
 * [Background](#background)
 * [Terminology](#terminology)
 * [Review of existing workflow systems](#review-of-existing-workflow-systems)
-* [Using data in workflows](#using-data-in-workflows)
-* [Front-end/back-end interaction](#front-endback-end-interaction)
 * [Workflow vs. automation](#workflow-vs-automation)
 * [Example workflows](#example-workflows)
     * [Acquisition of a suggested book](#acquisition-of-a-suggested-book)
     * [Unboxing a delivery](#unboxing-a-delivery)
     * [Submitting a thesis](#submitting-a-thesis)
+* [Using data in workflows](#using-data-in-workflows)
+* [Front-end/back-end interaction](#front-endback-end-interaction)
 * [Implementation analogies](#implementation-analogies)
     * [Finite state machine with transitions](#finite-state-machine-with-transitions)
     * [Makefile-like dependency tree](#makefile-like-dependency-tree)
@@ -66,28 +66,6 @@ XXX Nassib volunteered to do this: no issue filed yet AFAIK.
 
 
 
-## Using data in workflows
-
-XXX Nassib's experience of workflow engines: pain comes in standardising inputs and outputs
-
-XXX Should be avoidable here as data will be canonicalised on entering the system.
-
-XXX Should workflow-step inuts and outputs be items (full objects) or IDs (references to them)?
-
-XXX Does a workflow have its own state separate from the state of the objects it deals with? Does it suffice to mark a purchase as "needs authorization", or do we also need to make a workflow instance as "awaiting purchase authorization"? The latter allows us to tie together related operations after the event. Workflow is a great source of audit logging capability - Perhaps saving individual services from having to do excessive audit logging.
-
-
-
-## Front-end/back-end interaction
-
-XXX Goal is for most or all mechanism to be server-side. That is necessary for it to function in automation. Front-end involvement may be unavoidable in some cases.
-
-XXX Workflow editor as UX'd by Filip is separate.
-
-XXX Much will be done on back-end, though effects will be seen on front-end: e.g. partially pre-filled form that must be completed and submitted.
-
-
-
 ## Workflow vs. automation
 
 XXX Both pure automation (computer does every step) and human workflow. Workflows consisting entirely of the former can be thought of as macros.
@@ -112,6 +90,28 @@ XXX Getting a file of records from a vendor to load. Vendor delivers box of book
 ### Submitting a thesis
 
 XXX After Viva/Defence:: Receiving dissertation, Goes to cataloguing librarian, clean up abstract, upload to IR. 
+
+
+
+## Using data in workflows
+
+XXX Nassib's experience of workflow engines: pain comes in standardising inputs and outputs
+
+XXX Should be avoidable here as data will be canonicalised on entering the system.
+
+XXX Should workflow-step inuts and outputs be items (full objects) or IDs (references to them)?
+
+XXX Does a workflow have its own state separate from the state of the objects it deals with? Does it suffice to mark a purchase as "needs authorization", or do we also need to make a workflow instance as "awaiting purchase authorization"? The latter allows us to tie together related operations after the event. Workflow is a great source of audit logging capability - Perhaps saving individual services from having to do excessive audit logging.
+
+
+
+## Front-end/back-end interaction
+
+XXX Goal is for most or all mechanism to be server-side. That is necessary for it to function in automation. Front-end involvement may be unavoidable in some cases.
+
+XXX Workflow editor as UX'd by Filip is separate.
+
+XXX Much will be done on back-end, though effects will be seen on front-end: e.g. partially pre-filled form that must be completed and submitted.
 
 
 
