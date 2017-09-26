@@ -19,13 +19,13 @@
     * [Very high-level DSL (like Okapi CLI)](#very-high-level-dsl-like-okapi-cli)
 * [Implementation strategy](#implementation-strategy)
     * [Virtual Machine for running workflows](#virtual-machine-for-running-workflows)
-    * [A way to express workflows](#a-way-to-express-workflows)
+    * [Expressing workflows](#expressing-workflows)
         * [XML or JSON](#xml-or-json)
         * [Human-readable/writeable DSL](#human-readablewriteable-dsl)
         * [VM](#vm)
         * [Visual](#visual)
         * [Discussion](#discussion)
-    * [A way to track jobs](#a-way-to-track-jobs)
+    * [Tracking jobs](#tracking-jobs)
 * [Error handling](#error-handling)
 * [Appendix: using the notification system](#appendix-using-the-notification-system)
 * [Appendix: object types](#appendix-object-types)
@@ -145,7 +145,7 @@ XXX Domain-specific loop control, e.g. `boxOfBooks.foreach(book) { ... }`.
 
 XXX Somewhat like the CF Engine
 
-### A way to express workflows
+### Expressing workflows
 
 XXX Bizarrely, there may be up to four of these.
 
@@ -174,7 +174,7 @@ XXX Probably don't need all four representations. Which to omit?
 XXX Programming language: since we will need to parse/render on the client side for the V2 workflow editor, we will need implementations in JS. That suggests we should use those JS implementations on the server side too. This may mean the first Okapi module written in JS, or may entail somehow calling out from an RMB-based module into the JS compiler/renderer.
 
 
-### A way to track jobs
+### Tracking jobs
 
 XXX A back-end module for CRUDding the status of jobs based on workflows. Will likely consist of a tree of pointers to job-step objects, each with its own state. Will not need to be transmitted, so no need for a serialised or human-readable form.
 
