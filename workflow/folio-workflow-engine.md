@@ -26,6 +26,11 @@
         * [Visual](#visual)
         * [Discussion](#discussion)
     * [Tracking jobs](#tracking-jobs)
+    * [Operations](#operations)
+        * [Okapi calls](#okapi-calls)
+        * [Transformations](#transformations)
+        * [Control flow](#control-flow)
+        * [Other](#other)
 * [Error handling](#error-handling)
 * [Appendix: using the notification system](#appendix-using-the-notification-system)
 * [Appendix: object types](#appendix-object-types)
@@ -177,6 +182,26 @@ XXX Programming language: since we will need to parse/render on the client side 
 ### Tracking jobs
 
 XXX A back-end module for CRUDding the status of jobs based on workflows. Will likely consist of a tree of pointers to job-step objects, each with its own state. Will not need to be transmitted, so no need for a serialised or human-readable form.
+
+
+### Operations
+
+#### Okapi calls
+
+XXX CRUDding objects
+
+#### Transformations
+
+XXX Adding fields, modifying them, deleting them
+
+#### Control flow
+
+XXX if/then/else, while, foreach, do-in-parallel
+
+#### Other
+
+XXX What else?
+
 
 
 ## Error handling
