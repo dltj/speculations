@@ -29,6 +29,7 @@
         * [Okapi calls](#okapi-calls)
         * [Transformations](#transformations)
         * [Control flow](#control-flow)
+        * [Subroutines](#subroutines)
         * [Other](#other)
 * [Error handling](#error-handling)
 * [Appendix: using the notification system](#appendix-using-the-notification-system)
@@ -120,11 +121,27 @@ At this stage, a purchase order is raised, and the present job is complete. A ne
 
 ### Scenario 2: unboxing a delivery
 
-XXX I may not be able to get this one completely straight until I have formal and consistent definitions for shelfmark, call number and location. But here goes anyway.
-
 When a package of books arrives at a library, a file is also supplied that contains some relevant metadata. This may be physically included in the package, or downloaded from a specified FTP location, or obtained by some other method. Ingesting the file is the beginning of the process of getting the books into the system and onto the shelves.
 
-* Getting a file of records from a vendor to load. Vendor delivers box of books and file of bib records, eg shelf ready items with a barcode. For each barcode [Match on order number] you want to create an item record. Workflow “Go get file from ftp server [Or somewhere]”. Load file - for each item: “Match an existing record?” If Yes: “Overlay” If No: “Create Item”. Decide on location [to shelf level]. Shelf location [Or an indication thereof, such as fund code] may be on order information. -- Discussion of shelfmarks/call numbers/etc. Workflow[contd] : Check for holds/reservations on the new item.. 
+* Librarian imports the file of bibliographic data -- or, better, specifies a location, and FOLIO fetches and imports it.instance-level records.
+
+* Typically this file will consist only of instance-level bibliographic records. For each such record:
+
+  * If the system does not already have a record with this ISBN, insert the record into the instance store.
+  * Otherwise, merge the data in the new record with that in the existing record. This process will potentially be complex, involving heuristics and perhaps human intervention. (This might in fact be a whole other workflow, to be called as a subroutine.)
+
+  * The books typically come shelf-ready with barcodes already attached. Somewhere in the bib records will be a list of the barcodes for each physical item -- e.g. for all six copies of a given book. For each barcode:
+
+    * An item-level record must be created.
+    * Each item record must be populated with certain fields copied across from the instance record that it pertains to.
+
+  * XXX How do we decide what the shelving location should be? Is that information already included in the data file that comes with the physical books, or do we need to make that decision and add it to the item records? Is the location the same for all books that are items of the same instance? And by "location" here, do we mean shelfmark, call number, or location in the technical sense?
+
+  * Check for holds and reservations on the newly added instance. If they exist, notify the patrons that the book is now available.
+
+XXX Are holds and reservations the same thing?
+
+XXX Are holds/reservations placed on instances or items?
 
 
 ### Scenario 3: submitting a thesis
@@ -232,6 +249,10 @@ XXX Adding fields, modifying them, deleting them
 #### Control flow
 
 XXX if/then/else, while, foreach, do-in-parallel
+
+#### Subroutines
+
+XXX Call another named workflow with arguments
 
 #### Other
 
