@@ -5,7 +5,6 @@
 * [Background](#background)
 * [Terminology](#terminology)
 * [Review of existing workflow systems](#review-of-existing-workflow-systems)
-* [Workflow vs. automation](#workflow-vs-automation)
 * [Example workflows](#example-workflows)
     * [Acquisition of a suggested book](#acquisition-of-a-suggested-book)
     * [Unboxing a delivery](#unboxing-a-delivery)
@@ -82,12 +81,6 @@ XXX Like class and instance in OOP.
 ## Review of existing workflow systems
 
 XXX Nassib volunteered to do this: no issue filed yet AFAIK.
-
-
-
-## Workflow vs. automation
-
-XXX Both pure automation (computer does every step) and human workflow. Workflows consisting entirely of the former can be thought of as macros.
 
 
 
