@@ -3,7 +3,7 @@
 <!-- md2toc -l 2 folio-workflow-engine.md -->
 * [Preface: what this document is](#preface-what-this-document-is)
 * [Background](#background)
-* [Terminology](#terminology)
+    * [Terminology](#terminology)
 * [Review of existing workflow systems](#review-of-existing-workflow-systems)
 * [Example workflows](#example-workflows)
     * [Acquisition of a suggested book](#acquisition-of-a-suggested-book)
@@ -68,7 +68,7 @@ But well before this is required, FOLIO will need the underlying mechanisms for 
 We need to think about this now, rather then deferring until after the v1 release, because otherwise we will need to waste a lot of re-engineering down the line: replacing what in effect will be hardwired workflows with applications of the workflow engine. Want to avoid wasting development effort on hardwired workflows that we are only going to throw away.
 
 
-## Terminology
+### Terminology
 
 XXX A "workflow" is something that we author
 
