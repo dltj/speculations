@@ -1,7 +1,7 @@
 # White paper: the FOLIO workflow engine
 
 <!-- md2toc -l 2 folio-workflow-engine.md -->
-* [Preface](#preface)
+* [Preface: what this document is](#preface-what-this-document-is)
 * [Background](#background)
 * [Terminology](#terminology)
 * [Review of existing workflow systems](#review-of-existing-workflow-systems)
@@ -37,10 +37,21 @@
 
 
 
-## Preface
+## Preface: what this document is
 
-XXX Emerges from Montreal breakout with D, Peter, Nassib, Heikki, Jason, Ian, Mike.
+This is an overview of what workflow is or could be in FOLIO, how it breaks down into v1 and v2 features, what implications it has for the broader FOLIO architecture, and how we might go about implementing the v1 parts of it without circumscribing our options for the v2 parts when the time comes.
 
+Much of what is contained herein was first discussed in the Workflow breakout group on the morning of Friday 20 September 2017, in the Montreal FOLIO developer's meeting. Contributors in that session included 
+D Ellen Bonner,
+Ian Ibbotson,
+Heikki Levanto,
+Peter Murray,
+Nassib Nasar,
+Jason Skomorowski,
+and
+Mike Taylor.
+
+At this stage, the contents of this document should be considered as a foundation for discussion, rather than as a design for implementation.
 
 
 ## Background
