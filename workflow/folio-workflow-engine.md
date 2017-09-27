@@ -103,24 +103,28 @@ The following rather unlikely sequence of actions involved in placing a purchase
 
 * A patron wants to read a certain book -- an edition of _Pride and Prejudice_ with an interesting introductory essay, say -- but it is not in the library. She submits a request.
 
-* A junior librarian picks up the request and finds a source for a hardback edtion of the book. He submits it as a purchase request.
+* A paraprofessional (see below) picks up the request and finds a source for a hardback edtion of the book. He submits it as a purchase request.
 
-* A mid-level librarian picks up the purchase request and notices that the suggested edition is expensive. She pushes that purchase request back to the first librarian, asking whether there is any reason that an inexpensive paperback edition will not suffice.
+* An acquisitions librarian picks up the purchase request and notices that the suggested edition is expensive. She pushes that purchase request back to the patron, asking whether there is any reason that an inexpensive paperback edition will not suffice.
 
-* The junior librarian responds that only the nominated edition is acceptable since the patron's interest is in the introductory essay.
+* The patron responds that only the nominated edition is acceptable since her  interest is in the introductory essay.
 
-* The mid-level librarian accepts this, but is not authorised to spend the high price of this edition, to she escalates the purchase request to a senior librarian.
+* The acquisitions librarian accepts this, but is not authorised to spend the high price of this edition, to she escalates the purchase request to a senior librarian.
 
 * The senior librarian receives the request, along with the explanation for why the expensive edition of the book is necessary, and OKs the purchase.
 
 At this stage, a purchase order is raised, and the present job is complete. A new job may be created to handle the financial side of the transaction, but this will likely involve different people.
 
+("Paraprofessional" is an awful term used for people that do library jobs without a library degree. Seriously.)
+
 
 ### Scenario 2: unboxing a delivery
 
-XXX Formal definitions for Shelfmark, Call number, location
+XXX I may not be able to get this one completely straight until I have formal and consistent definitions for shelfmark, call number and location. But here goes anyway.
 
-XXX Getting a file of records from a vendor to load. Vendor delivers box of books and file of bib records, eg shelf ready items with a barcode. For each barcode [Match on order number] you want to create an item record. Workflow “Go get file from ftp server [Or somewhere]”. Load file - for each item: “Match an existing record?” If Yes: “Overlay” If No: “Create Item”. Decide on location [to shelf level]. Shelf location [Or an indication thereof, such as fund code] may be on order information. -- Discussion of shelfmarks/call numbers/etc. Workflow[contd] : Check for holds/reservations on the new item.. 
+When a package of books arrives at a library, a file is also supplied that contains some relevant metadata. This may be physically included in the package, or downloaded from a specified FTP location, or obtained by some other method. Ingesting the file is the beginning of the process of getting the books into the system and onto the shelves.
+
+* Getting a file of records from a vendor to load. Vendor delivers box of books and file of bib records, eg shelf ready items with a barcode. For each barcode [Match on order number] you want to create an item record. Workflow “Go get file from ftp server [Or somewhere]”. Load file - for each item: “Match an existing record?” If Yes: “Overlay” If No: “Create Item”. Decide on location [to shelf level]. Shelf location [Or an indication thereof, such as fund code] may be on order information. -- Discussion of shelfmarks/call numbers/etc. Workflow[contd] : Check for holds/reservations on the new item.. 
 
 
 ### Scenario 3: submitting a thesis
