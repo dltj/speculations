@@ -6,9 +6,9 @@
     * [Terminology](#terminology)
 * [Review of existing workflow systems](#review-of-existing-workflow-systems)
 * [Example workflows](#example-workflows)
-    * [Acquisition of a suggested book](#acquisition-of-a-suggested-book)
-    * [Unboxing a delivery](#unboxing-a-delivery)
-    * [Submitting a thesis](#submitting-a-thesis)
+    * [Scenario 1: acquisition of a suggested book](#scenario-1-acquisition-of-a-suggested-book)
+    * [Scenario 2: unboxing a delivery](#scenario-2-unboxing-a-delivery)
+    * [Scenario 3: submitting a thesis](#scenario-3-submitting-a-thesis)
 * [Using data in workflows](#using-data-in-workflows)
 * [Front-end/back-end interaction](#front-endback-end-interaction)
 * [Implementation analogies](#implementation-analogies)
@@ -92,20 +92,24 @@ XXX Nassib volunteered to do this: no issue filed yet AFAIK.
 
 ## Example workflows
 
+To ensure that FOLIO's workflow capabilities are sufficiently expressive to execute real library workflows, we need to establish some concrete scenarios. We will then be able to express these in a workflow language and consider how a workflow engine could execute them.
 
-### Acquisition of a suggested book
+Here are three scenarios.
+
+
+### Scenario 1: acquisition of a suggested book
 
 XXX Peter's example - Acquisitions - request for book - one user finds source, but doesn’t have perms to approve spend, so queues task up for other person.
 
 
-### Unboxing a delivery
+### Scenario 2: unboxing a delivery
 
 XXX Formal definitions for Shelfmark, Call number, location
 
 XXX Getting a file of records from a vendor to load. Vendor delivers box of books and file of bib records, eg shelf ready items with a barcode. For each barcode [Match on order number] you want to create an item record. Workflow “Go get file from ftp server [Or somewhere]”. Load file - for each item: “Match an existing record?” If Yes: “Overlay” If No: “Create Item”. Decide on location [to shelf level]. Shelf location [Or an indication thereof, such as fund code] may be on order information. -- Discussion of shelfmarks/call numbers/etc. Workflow[contd] : Check for holds/reservations on the new item.. 
 
 
-### Submitting a thesis
+### Scenario 3: submitting a thesis
 
 XXX After Viva/Defence:: Receiving dissertation, Goes to cataloguing librarian, clean up abstract, upload to IR. 
 
