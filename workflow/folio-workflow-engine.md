@@ -70,11 +70,15 @@ We need to think about this now, rather then deferring until after the v1 releas
 
 ### Terminology
 
-XXX A "workflow" is something that we author
+* A _workflow_ is a set of instructions for FOLIO and/or human users, expressing how to carry out a task. In v1, we will author these by hand, and in v2 there will be an editor. Either way, except when being edited, these are static, like classes in objct-oriented programs.
 
-XXX A "workflow instance" or "job" is a running instance of a workflow that has its own state.
+* A _workflow instance_ is a specific running instance of a workflow. It has parameters that may be set when it's started (e.g. the title of a book to order) and its own state that changes as the task progresseds (e.g. the status of an ongoing order). It resembles and instance of class in an objct-oriented program.
 
-XXX Like class and instance in OOP.
+* A _job_ is a simpler term for a workflow instance.
+
+* The _workflow editor_ is the visual editor for creating workflows, which will be created as part of FOLIO v2.
+
+* A _workflow language_ is a textual representation of a workflow, which can be authored by a developer. See [below](#expressing-workflows). Since this will be a domain-specific language (DSL) this may also be referred to as a _workflow DSL_.
 
 
 
