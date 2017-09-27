@@ -6,7 +6,7 @@
     * [Terminology](#terminology)
 * [Review of existing workflow systems](#review-of-existing-workflow-systems)
 * [Example workflows](#example-workflows)
-    * [Scenario 1: acquisition of a suggested book](#scenario-1-acquisition-of-a-suggested-book)
+    * [Scenario 1: acquisition of a requested book](#scenario-1-acquisition-of-a-requested-book)
     * [Scenario 2: unboxing a delivery](#scenario-2-unboxing-a-delivery)
     * [Scenario 3: submitting a thesis](#scenario-3-submitting-a-thesis)
 * [Using data in workflows](#using-data-in-workflows)
@@ -97,9 +97,23 @@ To ensure that FOLIO's workflow capabilities are sufficiently expressive to exec
 Here are three scenarios.
 
 
-### Scenario 1: acquisition of a suggested book
+### Scenario 1: acquisition of a requested book
 
-XXX Peter's example - Acquisitions - request for book - one user finds source, but doesn’t have perms to approve spend, so queues task up for other person.
+The following rather unlikely sequence of actions involved in placing a purchase order illustrates some of the possible difficulties that can be encountered in the course of this seemingly simple task.
+
+* A patron wants to read a certain book -- an edition of _Pride and Prejudice_ with an interesting introductory essay, say -- but it is not in the library. She submits a request.
+
+* A junior librarian picks up the request and finds a source for a hardback edtion of the book. He submits it as a purchase request.
+
+* A mid-level librarian picks up the purchase request and notices that the suggested edition is expensive. She pushes that purchase request back to the first librarian, asking whether there is any reason that an inexpensive paperback edition will not suffice.
+
+* The junior librarian responds that only the nominated edition is acceptable since the patron's interest is in the introductory essay.
+
+* The mid-level librarian accepts this, but is not authorised to spend the high price of this edition, to she escalates the purchase request to a senior librarian.
+
+* The senior librarian receives the request, along with the explanation for why the expensive edition of the book is necessary, and OKs the purchase.
+
+At this stage, a purchase order is raised, and the present job is complete. A new job may be created to handle the financial side of the transaction, but this will likely involve different people.
 
 
 ### Scenario 2: unboxing a delivery
