@@ -1,4 +1,4 @@
-# The FOLIO workflow engine: a straw-man proposal
+# White paper: the FOLIO workflow engine
 
 <!-- md2toc -l 2 folio-workflow-engine.md -->
 * [Preface](#preface)
