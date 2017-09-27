@@ -78,6 +78,8 @@ We need to think about this now, rather then deferring until after the v1 releas
 
 * The _workflow editor_ is the visual editor for creating workflows, which will be created as part of FOLIO v2.
 
+* The _workflow engine_ is the software that executes workflows on behalf of a user. It will exist quite separately from the workflow editor, which is only one way of authoring a workflow.
+
 * A _workflow language_ is a textual representation of a workflow, which can be authored by a developer. See [below](#expressing-workflows). Since this will be a domain-specific language (DSL) this may also be referred to as a _workflow DSL_.
 
 
